@@ -449,7 +449,7 @@ def install():
     run("mkdir -p /home/%s/logs" % env.user)
 
     # Install Python requirements
-    sudo("pip install -U pip virtualenv virtualenvwrapper mercurial")
+    sudo("pip install -U pip virtualenv virtualenvwrapper")
 
     # Set up virtualenv
     run("mkdir -p %s" % env.venv_home)
@@ -457,7 +457,7 @@ def install():
                                                               env.user))
     run("echo 'source /usr/local/bin/virtualenvwrapper.sh' >> "
         "/home/%s/.bashrc" % env.user)
-    print(green("Successfully set up git, mercurial, pip, virtualenv, "
+    print(green("Successfully set up git, pip, virtualenv, "
                 "supervisor, memcached.", bold=True))
 
 
